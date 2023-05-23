@@ -17,16 +17,17 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const app = firebase.initializeApp(firebaseConfig);
+const analytics = firebase.analytics();
+const auth = firebase.auth();
 
 // Initialize the FirebaseUI Widget using Firebase.
-var ui = new firebaseui.auth.AuthUI(app.auth());
+const ui = new firebaseui.auth.AuthUI(auth);
 
 ui.start('#firebaseui-auth-container', {
   signInOptions: [
-    app.auth.EmailAuthProvider.PROVIDER_ID,
-    app.auth.GoogleAuthProvider.PROVIDER_ID,
+    firebase.auth.EmailAuthProvider.PROVIDER_ID,
+    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
   ],
   // Other config options...
 });
