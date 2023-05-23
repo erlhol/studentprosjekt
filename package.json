@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "dotenv": "^16.0.3",
-    "firebase": "^9.22.0"
+    "firebase": "^9.22.0",
+    "firebaseui": "^6.0.2"
   }
 }

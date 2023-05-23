@@ -19,3 +19,14 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+
+// Initialize the FirebaseUI Widget using Firebase.
+var ui = new firebaseui.auth.AuthUI(app.auth());
+
+ui.start('#firebaseui-auth-container', {
+  signInOptions: [
+    app.auth.EmailAuthProvider.PROVIDER_ID,
+    app.auth.GoogleAuthProvider.PROVIDER_ID,
+  ],
+  // Other config options...
+});
