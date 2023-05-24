@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-analytics.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import * as firebaseui from 'firebaseui';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -18,15 +18,8 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-
-// Access Firebase services using the `app` object
-const analytics = getAnalytics(app);
-console.log(analytics);
-const auth = getAuth(app);
-
-// Initialize the FirebaseUI Widget using Firebase.
-var ui = new firebaseui.auth.AuthUI(auth);
+var app = firebase.initializeApp(firebaseConfig);
+var ui = new firebaseui.auth.AuthUI(app.auth());
 
 ui.start('#firebaseui-auth-container', {
   signInOptions: [
