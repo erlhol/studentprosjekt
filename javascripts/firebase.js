@@ -22,6 +22,7 @@ const app = initializeApp(firebaseConfig);
 
 // Access Firebase services using the `app` object
 const analytics = getAnalytics(app);
+console.log(analytics);
 const auth = getAuth(app);
 
 // Initialize the FirebaseUI Widget using Firebase.
