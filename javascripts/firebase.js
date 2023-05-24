@@ -25,7 +25,7 @@ const analytics = getAnalytics(app);
 const auth = getAuth(app);
 
 // Initialize the FirebaseUI Widget using Firebase.
-const ui = new firebaseui.auth.AuthUI(auth);
+var ui = new firebaseui.auth.AuthUI(auth);
 
 ui.start('#firebaseui-auth-container', {
   signInOptions: [
