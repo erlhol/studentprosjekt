@@ -18,7 +18,9 @@ const firebaseConfig = {
 const firebaseApp = initializeApp(firebaseConfig);
 const auth = getAuth(firebaseApp);
 
-/*
+// Initialize the FirebaseUI Widget using Firebase.
+var ui = new firebaseui.auth.AuthUI(firebase.auth());
+
 ui.start('#firebaseui-auth-container', {
   signInOptions: [
     auth.EmailAuthProvider.PROVIDER_ID,
@@ -26,4 +28,3 @@ ui.start('#firebaseui-auth-container', {
   ],
   // Other config options...
 });
-*/
