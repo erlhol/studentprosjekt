@@ -19,10 +19,6 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// Access Firebase services using the `app` object
-const analytics = app.analytics();
-const auth = app.auth();
-
 // Initialize the FirebaseUI Widget using Firebase.
 const ui = new firebaseui.auth.AuthUI(auth);
 
