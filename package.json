@@ -1,0 +1,18 @@
+{
+  "name": "studentprosjekt",
+  "version": "1.0.0",
+  "description": "Studentprosjekt for å få til sosiale sammenkomster mellom studenter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^9.22.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.83.1",
+    "webpack-cli": "^5.1.1"
+  }
+}
