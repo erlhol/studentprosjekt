@@ -18,7 +18,7 @@ const firebaseConfig = {
 const firebaseApp = initializeApp(firebaseConfig);
 const auth = getAuth(firebaseApp);
 
-createUserWithEmailAndPassword(auth, email, password)
+createUserWithEmailAndPassword(auth, "email@gmail.com", "password")
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
