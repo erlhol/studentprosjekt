@@ -1,8 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -19,14 +17,3 @@ const firebaseConfig = {
 // Initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig);
 const auth = getAuth(firebaseApp);
-
-// Initialize the FirebaseUI Widget using Firebase.
-var ui = new firebaseui.auth.AuthUI(auth);
-
-ui.start('#firebaseui-auth-container', {
-  signInOptions: [
-    auth.EmailAuthProvider.PROVIDER_ID,
-    auth.GoogleAuthProvider.PROVIDER_ID,
-  ],
-  // Other config options...
-});
