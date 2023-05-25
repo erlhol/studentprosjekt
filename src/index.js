@@ -20,7 +20,6 @@ const auth = getAuth(firebaseApp);
 
 const provider = new GoogleAuthProvider();
 
-
 function googleSignin() {
   firebase.auth()
   
