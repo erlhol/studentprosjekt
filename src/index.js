@@ -1,5 +1,5 @@
 import {initializeApp} from 'https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js';
-import {getAuth, onAuthStateChanged} from 'https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js';
+import {getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js';
 
 const firebaseApp = initializeApp({
     apiKey: "AIzaSyCkeH9dZ53yTDaUlpLR0kPBSp-NUjbMwsU",
@@ -13,6 +13,39 @@ const firebaseApp = initializeApp({
     });
 
 const auth = getAuth(firebaseApp);
+
+function signUp() {
+    const email = document.getElementById('signup-email').value;
+    const password = document.getElementById('signup-password').value;
+    createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    console.log("user created:",user);
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log(errorCode,errorMessage);
+  });
+}
+
+function signIn() {
+    const email = "1234";
+    const password = "12345";
+    signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    console.log("Signed in:",user);
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log(errorCode,errorMessage);
+  });
+}
+
 onAuthStateChanged(auth, user => {
     if (user != null) {
         console.log("Logged in");
@@ -21,3 +54,6 @@ onAuthStateChanged(auth, user => {
         console.log("No user");
     }
 });
+
+
+
