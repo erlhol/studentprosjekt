@@ -14,6 +14,12 @@ const firebaseApp = initializeApp({
 
 const auth = getAuth(firebaseApp);
 
+// Find the "Sign Up" button by its ID
+const signUpButton = document.getElementById('signup-button');
+
+// Bind the signUp() function to the click event of the button
+signUpButton.addEventListener('click', signUp);
+
 function signUp() {
     const email = document.getElementById('signup-email').value;
     const password = document.getElementById('signup-password').value;
