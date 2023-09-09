@@ -98,6 +98,7 @@ def crawl_calendar_info():
     # First: select the first link, that is the most recent semester
     # Then: follow link to "Timeplan / schedule"
     # Last: Crawl the page for all the "forelesninger"
+    # Can use split - most of the webpages have this Forelesninger - (something)
     pass
 
 if __name__ == '__main__':
